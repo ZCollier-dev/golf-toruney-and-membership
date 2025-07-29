@@ -4,8 +4,8 @@ package org.example;
 * Post screenshots of Postman doing API tests
 * Add new members and tournaments
 * Add members to tournaments
-* Search members by name, membership type, phone number, tourney start date
-* Search tournaments for start date, location
+* Search members by name, membership type, phone number
+* Search tournaments for start date, location, tourneys
 * Find all members in tournament
 * Add Docker support */
 
