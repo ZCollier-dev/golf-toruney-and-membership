@@ -14,7 +14,7 @@ import java.util.List;
 public class Member {
     //attributes
     @Id
-    private long id;
+    private Long id;
     private short durationMonths;
     private Calendar membershipStartDate;
     private String name;
@@ -26,10 +26,10 @@ public class Member {
     private List<Tournament> tournaments;
 
     //methods
-    public void setId(long id){
+    public void setId(Long id){
         this.id = id;
     }
-    public long setId(){
+    public Long setId(){
         return this.id;
     }
 
