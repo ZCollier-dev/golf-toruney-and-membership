@@ -23,4 +23,47 @@ public class Tournament {
             inverseJoinColumns = @JoinColumn(name = "member_id")
     )
     private List<Member> members;
+
+    //methods
+    public void setId(long id){
+        this.id = id;
+    }
+    public long getId(){
+        return this.id;
+    }
+
+    public void setEntryFee(float entryFee){
+        this.entryFee = entryFee;
+    }
+    public float getEntryFee(){
+        return this.entryFee;
+    }
+
+    public void setCashPrize(float cashPrize){
+        this.cashPrize = cashPrize;
+    }
+    public float getCashPrize(){
+        return this.cashPrize;
+    }
+
+    public void setStartDate(Calendar startDate){
+        this.startDate = startDate;
+    }
+    public Calendar getStartDate(){
+        return this.startDate;
+    }
+
+    public void setEndDate(Calendar endDate){
+        this.endDate = endDate;
+    }
+    public Calendar getEndDate(){
+        return this.endDate;
+    }
+
+    public void setMembers(List<Member> members){
+        this.members = members;
+    }
+    public List<Member> getMembers(){
+        return this.members;
+    }
 }
