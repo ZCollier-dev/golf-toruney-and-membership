@@ -19,10 +19,14 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    public Member findById(Long id){
+        Optional<Member> foundMemberOptional = memberRepository.findById(id);
+        return foundMemberOptional.orElse(null);
+    }
     public Member findByName(String name){
         return memberRepository.findByName(name);
     }
-    public Member findByMembershipType(String membershipType){
+    public List<Member> findByMembershipType(String membershipType){
         return memberRepository.findByMembershipType(membershipType);
     }
     public Member findByPhone(String phone){
