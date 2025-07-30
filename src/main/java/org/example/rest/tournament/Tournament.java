@@ -15,6 +15,7 @@ public class Tournament {
     private float cashPrize;
     private Calendar startDate;
     private Calendar endDate;
+    private String location;
 
     @ManyToMany
     @JoinTable(
@@ -59,6 +60,9 @@ public class Tournament {
     public Calendar getEndDate(){
         return this.endDate;
     }
+
+    public void setLocation(String location) { this.location = location; }
+    public String getLocation() { return this.location; }
 
     public void setMembers(List<Member> members){
         this.members = members;
