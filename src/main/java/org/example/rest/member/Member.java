@@ -15,15 +15,15 @@ public class Member {
     //attributes
     @Id
     private Long id;
-    private short durationMonths;
-    private Calendar membershipStartDate;
-    private String membershipType;
     private String name;
+    private Calendar membershipStartDate;
+    private short durationMonths;
+    private String membershipType;
     private String address;
     private String email;
     private String phone;
 
-    @ManyToMany(mappedBy = "tournament")
+    @ManyToMany(mappedBy = "members")
     private List<Tournament> tournaments;
 
     //methods
