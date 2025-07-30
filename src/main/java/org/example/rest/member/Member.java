@@ -17,6 +17,7 @@ public class Member {
     private Long id;
     private short durationMonths;
     private Calendar membershipStartDate;
+    private String membershipType;
     private String name;
     private String address;
     private String email;
@@ -47,6 +48,9 @@ public class Member {
         return this.membershipStartDate;
     }
 
+    public void setMembershipType(String membershipType){ this.membershipType = membershipType;}
+    public String getMembershipType(){ return this.membershipType; }
+
     public void setName(String name){
         this.name = name;
     }
@@ -73,12 +77,5 @@ public class Member {
     }
     public String getPhone(){
         return this.phone;
-    }
-
-    public void setTournaments(List<Tournament> tournaments){
-        this.tournaments = tournaments;
-    }
-    public List<Tournament> getTournaments(){
-        return this.tournaments;
     }
 }
