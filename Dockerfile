@@ -1,5 +1,4 @@
 FROM openjdk:23
-WORKDIR /javaapp
-COPY GolfApp.java .
-RUN javac GolfApp.java
-CMD ["java", "GolfApp"]
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
