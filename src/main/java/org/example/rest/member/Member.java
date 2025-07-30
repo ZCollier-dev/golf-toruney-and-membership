@@ -78,4 +78,11 @@ public class Member {
     public String getPhone(){
         return this.phone;
     }
+
+    public void setTournaments(List<Tournament> tournaments){
+        this.tournaments = tournaments;
+    }
+    public List<Tournament> getTournaments(){
+        return this.tournaments;
+    }
 }

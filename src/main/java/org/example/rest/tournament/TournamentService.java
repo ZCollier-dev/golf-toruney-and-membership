@@ -1,7 +1,5 @@
 package org.example.rest.tournament;
 
-import org.example.rest.member.Member;
-import org.example.rest.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +22,12 @@ public class TournamentService {
         return tournamentRepository.findAll();
     }
 
-    public Tournament findByStartDate(Calendar startDate){
+    public Tournament findById(Long id) { return tournamentRepository.findById(id).orElse(null); }
+
+    public List<Tournament> findByStartDate(Calendar startDate){
         return tournamentRepository.findByStartDate(startDate);
     }
-    public Tournament findByLocation(String location){
+    public List<Tournament> findByLocation(String location){
         return tournamentRepository.findByLocation(location);
     }
 

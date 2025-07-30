@@ -70,4 +70,7 @@ public class Tournament {
     public List<Member> getMembers(){
         return this.members;
     }
+    public void addMember(Member member){
+        this.members.add(member);
+    }
 }
