@@ -10,7 +10,7 @@ import java.util.List;
 public class Tournament {
     //attributes
     @Id
-    private long id;
+    private Long id;
     private float entryFee;
     private float cashPrize;
     private Calendar startDate;
@@ -25,10 +25,10 @@ public class Tournament {
     private List<Member> members;
 
     //methods
-    public void setId(long id){
+    public void setId(Long id){
         this.id = id;
     }
-    public long getId(){
+    public Long getId(){
         return this.id;
     }
 
