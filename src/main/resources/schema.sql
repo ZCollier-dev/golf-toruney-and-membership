@@ -1,9 +1,4 @@
--- DROP in dependency-safe order
-DROP TABLE IF EXISTS tournament_member;
-DROP TABLE IF EXISTS tournament;
-DROP TABLE IF EXISTS member;
-
--- RECREATE all tables
+-- CREATE all tables
 CREATE TABLE tournament (
     id INT PRIMARY KEY,
     entry_fee DECIMAL,
