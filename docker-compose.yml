@@ -1,0 +1,10 @@
+#version: '3'
+services:
+  myapp-main:
+    image: golf-tourney-and-membership:latest
+    ports:
+      - 8080:8080
+    environment:
+      - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/golf_tourney_db
+      - spring.datasource.username=root
+      - spring.datasource.password=1two3Four5s!x78
