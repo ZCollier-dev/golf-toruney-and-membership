@@ -1,8 +1,8 @@
 -- CREATE all tables
 CREATE TABLE tournament (
     id INT PRIMARY KEY,
-    entry_fee DECIMAL,
-    cash_prize DECIMAL,
+    entry_fee DECIMAL(6, 2),
+    cash_prize DECIMAL(10, 2),
     start_date DATE,
     end_date DATE,
     location VARCHAR(255)
