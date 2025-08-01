@@ -1,9 +1,6 @@
 package org.example.rest.member;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import org.example.rest.tournament.Tournament;
 
 import java.util.Calendar;
@@ -23,7 +20,7 @@ public class Member {
     private String email;
     private String phone;
 
-    @ManyToMany(mappedBy = "members")
+    @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY)
     private List<Tournament> tournaments;
 
     //methods
