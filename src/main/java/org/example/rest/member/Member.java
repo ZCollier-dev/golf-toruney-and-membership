@@ -26,7 +26,7 @@ public class Member {
     private String email;
     private String phone;
 
-    @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JsonIgnoreProperties
     private List<Tournament> tournaments;
 
