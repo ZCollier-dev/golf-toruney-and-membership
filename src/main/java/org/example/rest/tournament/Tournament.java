@@ -18,7 +18,9 @@ import java.util.List;
 public class Tournament {
     //attributes
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private float entryFee;
     private float cashPrize;
     private Calendar startDate;

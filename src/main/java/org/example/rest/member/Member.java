@@ -18,7 +18,9 @@ import java.util.List;
 public class Member {
     //attributes
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
     private Calendar membershipStartDate;
     private short durationMonths;
