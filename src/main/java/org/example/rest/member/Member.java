@@ -1,5 +1,6 @@
 package org.example.rest.member;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import org.example.rest.tournament.Tournament;
 
@@ -21,6 +22,7 @@ public class Member {
     private String phone;
 
     @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY)
+    @JsonBackReference
     private List<Tournament> tournaments;
 
     //methods
