@@ -1,22 +1,10 @@
 package org.example.rest.member;
 
-import com.fasterxml.jackson.annotation.*;
-import jakarta.persistence.*;
-import org.example.rest.tournament.Tournament;
-import org.example.rest.tournament.TournamentDTO;
 
 import java.util.Calendar;
-import java.util.List;
 
-@Entity
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id"
-)
-public class Member {
-    //attributes
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+// Data Transfer Object
+public class MemberDTO {
     private Long id;
 
     private String name;
@@ -27,10 +15,6 @@ public class Member {
     private String email;
     private String phone;
 
-    @ManyToMany(mappedBy = "members")
-    private List<TournamentDTO> tournaments;
-
-    //methods
     public void setId(Long id){
         this.id = id;
     }

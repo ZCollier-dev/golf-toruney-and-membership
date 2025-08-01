@@ -1,6 +1,6 @@
 -- CREATE all tables
 CREATE TABLE tournament (
-    id INT PRIMARY KEY,
+    id INT NOT NULL PRIMARY KEY,
     entry_fee DECIMAL(6, 2),
     cash_prize DECIMAL(10, 2),
     start_date DATE,
@@ -9,7 +9,7 @@ CREATE TABLE tournament (
 );
 
 CREATE TABLE member (
-    id INT PRIMARY KEY,
+    id INT NOT NULL PRIMARY KEY,
     name VARCHAR(255),
     membership_start_date DATE,
     duration_months INT,

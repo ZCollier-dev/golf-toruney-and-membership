@@ -1,22 +1,12 @@
 package org.example.rest.tournament;
 
-import com.fasterxml.jackson.annotation.*;
-import jakarta.persistence.*;
 import org.example.rest.member.Member;
-import org.example.rest.member.MemberDTO;
 
 import java.util.Calendar;
 import java.util.List;
 
-@Entity
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id"
-)
-public class Tournament {
-    //attributes
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//Data Transfer Object
+public class TournamentDTO {
     private Long id;
 
     private float entryFee;
@@ -25,15 +15,6 @@ public class Tournament {
     private Calendar endDate;
     private String location;
 
-    @ManyToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "tournament_member",
-            joinColumns = @JoinColumn(name = "tournament_id"),
-            inverseJoinColumns = @JoinColumn(name = "member_id")
-    )
-    private List<MemberDTO> members;
-
-    //methods
     public void setId(Long id){
         this.id = id;
     }
@@ -71,14 +52,4 @@ public class Tournament {
 
     public void setLocation(String location) { this.location = location; }
     public String getLocation() { return this.location; }
-
-    public void setMembers(List<MemberDTO> members){
-        this.members = members;
-    }
-    public List<MemberDTO> getMembers(){
-        return this.members;
-    }
-    public void addMember(MemberDTO member){
-        this.members.add(member);
-    }
 }

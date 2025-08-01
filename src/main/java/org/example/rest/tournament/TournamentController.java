@@ -1,6 +1,7 @@
 package org.example.rest.tournament;
 
 import org.example.rest.member.Member;
+import org.example.rest.member.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +39,7 @@ public class TournamentController {
     }
 
     @GetMapping("/tournament/members/{id}")
-    public List<Member> getTournamentMembersById(@PathVariable Long id){
+    public List<MemberDTO> getTournamentMembersById(@PathVariable Long id){
         Tournament foundTournament = tournamentService.findById(id);
         if (foundTournament != null){
             return foundTournament.getMembers();
@@ -59,7 +60,7 @@ public class TournamentController {
     @PutMapping("/tournament/member/{id}")
     public ResponseEntity<Tournament> addMemberToTournamentById(@PathVariable Long id,
                                                                 @RequestBody Tournament tournament,
-                                                                @RequestParam("new_member") Member newMember) {
+                                                                @RequestParam("new_member") MemberDTO newMember) {
         tournament.addMember(newMember);
         return ResponseEntity.ok(tournamentService.updateTournament(id, tournament));
     }
