@@ -22,8 +22,8 @@ public class Member {
     private String email;
     private String phone;
 
-    @JsonIgnore
     @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Tournament> tournaments;
 
     //methods

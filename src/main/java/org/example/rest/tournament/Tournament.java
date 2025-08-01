@@ -19,13 +19,13 @@ public class Tournament {
     private Calendar endDate;
     private String location;
 
-    @JsonIgnore
     @ManyToMany (fetch = FetchType.LAZY)
     @JoinTable(
             name = "tournament_member",
             joinColumns = @JoinColumn(name = "tournament_id"),
             inverseJoinColumns = @JoinColumn(name = "member_id")
     )
+    @JsonIgnore
     private List<Member> members;
 
     //methods
