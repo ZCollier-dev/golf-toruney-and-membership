@@ -33,7 +33,7 @@ public class Member {
     public void setId(Long id){
         this.id = id;
     }
-    public Long setId(){
+    public Long getId(){
         return this.id;
     }
 
