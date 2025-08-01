@@ -11,3 +11,5 @@ From the directory with the Dockerfile and docker-compose.yml, run the following
 ```docker compose up```
 
 From there, the API runs on http://localhost:8080.
+
+i am dealing with infinite recursion

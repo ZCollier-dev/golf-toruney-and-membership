@@ -25,15 +25,6 @@ public class MemberController {
         return memberService.findById(id);
     }
 
-    @GetMapping("/member/tournaments/{id}")
-    public List<Tournament> getMemberTournamentsById(@PathVariable Long id){
-        Member foundMember = memberService.findById(id);
-        if (foundMember != null){
-            return foundMember.getTournaments();
-        }
-        return null;
-    }
-
     @GetMapping("/member_search")
     public List<Member> getMemberSearch(@RequestParam(value = "name", required = false) String name,
                                         @RequestParam(value = "membership_type", required = false) String membershipType,
