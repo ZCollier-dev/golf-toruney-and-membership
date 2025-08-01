@@ -26,8 +26,7 @@ public class Member {
     private String email;
     private String phone;
 
-    @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
-    @JsonIgnoreProperties
+    @ManyToMany(mappedBy = "members")
     private List<Tournament> tournaments;
 
     //methods
@@ -81,12 +80,5 @@ public class Member {
     }
     public String getPhone(){
         return this.phone;
-    }
-
-    public void setTournaments(List<Tournament> tournaments){
-        this.tournaments = tournaments;
-    }
-    public List<Tournament> getTournaments(){
-        return this.tournaments;
     }
 }
