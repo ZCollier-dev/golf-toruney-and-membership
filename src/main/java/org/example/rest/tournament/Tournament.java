@@ -1,5 +1,6 @@
 package org.example.rest.tournament;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.example.rest.member.Member;
@@ -18,8 +19,8 @@ public class Tournament {
     private Calendar endDate;
     private String location;
 
+    @JsonIgnore
     @ManyToMany (fetch = FetchType.LAZY)
-    @JsonManagedReference
     @JoinTable(
             name = "tournament_member",
             joinColumns = @JoinColumn(name = "tournament_id"),
