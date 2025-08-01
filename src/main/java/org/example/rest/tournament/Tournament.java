@@ -24,13 +24,12 @@ public class Tournament {
     private Calendar endDate;
     private String location;
 
-    @ManyToMany (fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @ManyToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "tournament_member",
             joinColumns = @JoinColumn(name = "tournament_id"),
             inverseJoinColumns = @JoinColumn(name = "member_id")
     )
-    @JsonIgnoreProperties
     private List<Member> members;
 
     //methods
