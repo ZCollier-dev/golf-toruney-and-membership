@@ -1,7 +1,9 @@
 package org.example.rest.tournament;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import org.example.rest.member.Member;
 
@@ -9,6 +11,10 @@ import java.util.Calendar;
 import java.util.List;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Tournament {
     //attributes
     @Id
@@ -25,7 +31,6 @@ public class Tournament {
             joinColumns = @JoinColumn(name = "tournament_id"),
             inverseJoinColumns = @JoinColumn(name = "member_id")
     )
-    @JsonIgnore
     private List<Member> members;
 
     //methods

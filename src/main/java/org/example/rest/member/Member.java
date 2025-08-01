@@ -1,15 +1,20 @@
 package org.example.rest.member;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import org.example.rest.tournament.Tournament;
 
 import java.util.Calendar;
 import java.util.List;
 
-
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Member {
     //attributes
     @Id
@@ -23,7 +28,6 @@ public class Member {
     private String phone;
 
     @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY)
-    @JsonIgnore
     private List<Tournament> tournaments;
 
     //methods
