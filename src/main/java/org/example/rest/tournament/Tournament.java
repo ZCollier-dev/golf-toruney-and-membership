@@ -17,7 +17,7 @@ public class Tournament {
     private Calendar endDate;
     private String location;
 
-    @ManyToMany
+    @ManyToMany (fetch = FetchType.LAZY)
     @JoinTable(
             name = "tournament_member",
             joinColumns = @JoinColumn(name = "tournament_id"),
